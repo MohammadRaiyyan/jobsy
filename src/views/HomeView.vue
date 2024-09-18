@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import JobListings from '@/components/JobListings/JobListings.vue'
 import CustomButton from '@/components/ui/CustomButton.vue'
+import { IconCategoryPlus, IconSearch } from '@tabler/icons-vue'
 import { RouterLink } from 'vue-router'
 </script>
 
@@ -18,9 +19,17 @@ import { RouterLink } from 'vue-router'
         Your dream job is just a click away!
       </p>
       <div class="flex justify-center gap-4">
-        <RouterLink to="/jobs"><CustomButton>Find a Job</CustomButton></RouterLink>
+        <RouterLink to="/jobs"
+          ><CustomButton size="large" class="flex items-center gap-2">
+            <IconSearch size="20" />
+            Find Job</CustomButton
+          ></RouterLink
+        >
         <RouterLink to="/post-job"
-          ><CustomButton variant="accent-ghost">Post a Job</CustomButton></RouterLink
+          ><CustomButton variant="secondary" size="large" class="flex items-center gap-2">
+            <IconCategoryPlus size="18" />
+            Post Job</CustomButton
+          ></RouterLink
         >
       </div>
     </div>
@@ -40,7 +49,7 @@ import { RouterLink } from 'vue-router'
 
   <!-- Featured Jobs -->
   <section class="container mx-auto text-left rounded mt-8">
-    <h2 class="text-xl font-medium mb-5">Featured Jobs</h2>
+    <h2 class="text-lg font-medium mb-5">Featured Jobs</h2>
     <JobListings />
   </section>
 

@@ -22,7 +22,7 @@ const props = defineProps<Job>()
 </script>
 
 <template>
-  <div class="bg-card shadow-md border rounded-lg p-6 max-w-max text-left">
+  <div class="bg-card shadow-sm border rounded-lg p-6 max-w-max text-left">
     <!-- Company Logo -->
     <div class="flex items-center mb-4">
       <img
@@ -65,7 +65,7 @@ const props = defineProps<Job>()
       >
     </div>
     <!-- Description/Details -->
-    <p class="mb-4">
+    <p class="mb-4 text-secondary-foreground">
       {{ props.job.description }}
     </p>
     <!-- Buttons -->
@@ -76,8 +76,8 @@ const props = defineProps<Job>()
         <CustomButton :block="true"> Apply Now </CustomButton>
       </RouterLink>
       <!-- View Details Button -->
-      <RouterLink to="/view-details" class="flex-1">
-        <CustomButton variant="success-secondary" :block="true"> View Details </CustomButton>
+      <RouterLink :to="`/job/${props.job.id}`" class="flex-1">
+        <CustomButton variant="tertiary" :block="true"> View Details </CustomButton>
       </RouterLink>
     </div>
   </div>

@@ -13,7 +13,7 @@
     --card-foreground: 240 10% 3.9%; /* Text color in cards */
     --popover: 0 0% 100%; /* Popover background */
     --popover-foreground: 240 10% 3.9%; /* Popover text color */
-    --primary: 220 90% 56%; /* Primary color (blue500) */
+    --primary: 220 72% 50%; /* Updated primary color */
     --primary-foreground: 0 0% 100%; /* Text on primary buttons */
     --accent: 24 100% 50%; /* Accent color (orange) */
     --accent-foreground: 0 0% 100%; /* Text on accent elements */
@@ -25,7 +25,7 @@
     --destructive-foreground: 0 0% 98%; /* Text for destructive elements */
     --border: 240 5.9% 90%; /* Border color */
     --input: 240 5.9% 90%; /* Input field background */
-    --ring: 220 90% 56%; /* Focus ring (same as primary color) */
+    --ring: 220 72% 50%; /* Updated focus ring color to match primary */
     --radius: 0.5rem; /* Default border radius */
   }
 
@@ -37,7 +37,7 @@
     --card-foreground: 0 0% 98%; /* Light text in cards */
     --popover: 240 10% 15%; /* Dark popover background */
     --popover-foreground: 0 0% 98%; /* Light text in popovers */
-    --primary: 220 90% 56%; /* Primary color stays the same */
+    --primary: 220 72% 50%; /* Updated primary color for dark mode */
     --primary-foreground: 0 0% 100%; /* Light text on primary elements */
     --accent: 24 100% 50%; /* Accent color (orange) remains the same */
     --accent-foreground: 0 0% 100%; /* Text on accent elements */
@@ -49,7 +49,7 @@
     --destructive-foreground: 0 85.7% 97.3%; /* Destructive text */
     --border: 240 3.7% 20%; /* Dark mode border */
     --input: 240 3.7% 20%; /* Dark mode input background */
-    --ring: 220 90% 56%; /* Focus ring */
+    --ring: 220 72% 50%; /* Updated focus ring color to match primary */
     --radius: 0.5rem; /* Same border radius */
   }
 

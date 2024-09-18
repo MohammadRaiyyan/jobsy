@@ -14,7 +14,7 @@ import TextInput from '@/components/ui/TextInput.vue'
           Log in to publish job postings and find qualified candidates quickly
         </p>
       </div>
-      <form class="space-y-4">
+      <form class="space-y-5">
         <div class="space-y-1.5">
           <label for="email">Email</label>
           <TextInput name="email" id="email" placeholder="e.g. company@gmail.com" />
@@ -36,7 +36,6 @@ import TextInput from '@/components/ui/TextInput.vue'
           <span class="text-primary underline transition-all">
             <RouterLink to="/signup"> Sign Up </RouterLink>
           </span>
-          to start posting jobs
         </h4>
       </div>
     </div>

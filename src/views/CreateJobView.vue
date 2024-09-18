@@ -68,7 +68,7 @@ Custom (with a date picker) -->
 <!-- location can be onsight -->
 <template>
   <main class="container mx-auto h-full mb-12">
-    <div class="bg-card border rounded-lg space-y-5 p-5">
+    <div class="bg-card border shadow-sm rounded-lg space-y-5 p-5">
       <div class="py-6 text-center space-y-3">
         <h2 class="font-semibold text-2xl text-center">Attract Top Talent to Your Team</h2>
         <p class="text-muted-foreground">
@@ -177,7 +177,7 @@ Custom (with a date picker) -->
 
         <div class="flex items-center justify-end gap-3">
           <!-- Submit Button -->
-          <CustomButton type="button" variant="secondary">Preview</CustomButton>
+          <CustomButton type="button" variant="tertiary">Preview</CustomButton>
           <CustomButton type="submit">Submit Job</CustomButton>
         </div>
       </form>

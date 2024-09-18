@@ -40,11 +40,9 @@ function submitForm() {}
 
 <template>
   <div class="bg-card text-card-foreground max-w-3xl w-full p-5 space-y-10">
-    <div class="space-y-4 text-center">
-      <h1 class="text-2xl font-semibold text-center">Tell us about the company</h1>
-      <p class="text-muted-foreground">
-        These company information will be used while publishing the jobs
-      </p>
+    <div class="space-y-3 text-center">
+      <h1 class="text-2xl font-semibold text-center">Complete Your Company Profile</h1>
+      <p class="text-muted-foreground">This information will be used when publishing jobs</p>
     </div>
     <form @submit.prevent="submitForm" class="space-y-4">
       <div class="grid grid-cols-2 gap-4">

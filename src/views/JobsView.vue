@@ -81,7 +81,7 @@ const jobSortyByOptions = [
           <TextInput :icon="IconCash" iconPosition="left" type="number" placeholder="Max Salary" />
         </div>
 
-        <CustomButton variant="accent-ghost">
+        <CustomButton variant="tertiary">
           <IconFilter size="16" />
           Apply Filters
         </CustomButton>
@@ -94,12 +94,12 @@ const jobSortyByOptions = [
     </div>
     <!-- Recent Jobs Section -->
     <section class="mt-8">
-      <h2 class="text-xl font-medium mb-4">Recent Jobs</h2>
+      <h2 class="text-lg font-medium mb-5">Recent Jobs</h2>
       <JobListings />
     </section>
     <!-- All Jobs Section -->
     <section class="mt-8">
-      <h2 class="text-xl font-medium mb-4">All Jobs</h2>
+      <h2 class="text-lg font-medium mb-5">All Jobs</h2>
       <JobListings />
     </section>
   </div>
