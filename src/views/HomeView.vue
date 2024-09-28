@@ -1,32 +1,31 @@
 <script setup lang="ts">
 import JobListings from '@/components/JobListings/JobListings.vue'
 import CustomButton from '@/components/ui/CustomButton.vue'
+import SectionTitle from '@/components/ui/SectionTitle.vue'
 import { IconCategoryPlus, IconSearch } from '@tabler/icons-vue'
 import { RouterLink } from 'vue-router'
 </script>
 
 <template>
   <section
-    class="container mx-auto text-center flex items-center justify-center rounded overflow-hidden h-[400px]"
+    class="text-center flex items-center justify-center rounded overflow-hidden md:h-[400px] h-max"
   >
     <div
-      class="bg-primary/10 w-full h-full py-12 flex flex-col items-center justify-center rounded"
+      class="bg-card border w-full h-full py-12 px-5 flex flex-col items-center justify-center rounded-xl"
     >
-      <h1 class="text-4xl font-semibold mb-4">Find Your Next Career Opportunity with Ease</h1>
-      <p class="text-lg mb-8">
-        Connect with top employers and discover job openings that match your skills and ambitions.
-        <br />
-        Your dream job is just a click away!
-      </p>
-      <div class="flex justify-center gap-4">
-        <RouterLink to="/jobs"
-          ><CustomButton size="large" class="flex items-center gap-2">
+      <h1 class="lg:text-4xl sm:text-2xl text-xl font-semibold mb-4">
+        The Ultimate Hub for Job Seekers and Employers
+      </h1>
+      <p class="mb-8">Find Your Dream Job or Post Your Next Great Opportunity</p>
+      <div class="grid md:grid-cols-2 grid-cols-1 justify-center gap-4 w-full md:w-max">
+        <RouterLink to="/jobs" class="md:w-max w-full flex items-center justify-center"
+          ><CustomButton block size="large" class="flex items-center gap-2">
             <IconSearch size="20" />
             Find Job</CustomButton
           ></RouterLink
         >
-        <RouterLink to="/post-job"
-          ><CustomButton variant="secondary" size="large" class="flex items-center gap-2">
+        <RouterLink to="/post-job" class="md:w-max w-full"
+          ><CustomButton block variant="secondary" size="large" class="flex items-center gap-2">
             <IconCategoryPlus size="18" />
             Post Job</CustomButton
           ></RouterLink
@@ -48,8 +47,8 @@ import { RouterLink } from 'vue-router'
     </section> -->
 
   <!-- Featured Jobs -->
-  <section class="container mx-auto text-left rounded mt-8">
-    <h2 class="text-lg font-medium mb-5">Featured Jobs</h2>
+  <section class="text-left rounded mt-8">
+    <SectionTitle title="Featured Jobs" />
     <JobListings />
   </section>
 

@@ -39,13 +39,13 @@ function submitForm() {}
 </script>
 
 <template>
-  <div class="bg-card text-card-foreground max-w-3xl w-full p-5 space-y-10">
+  <div class="max-w-3xl w-full p-6 space-y-10">
     <div class="space-y-3 text-center">
       <h1 class="text-2xl font-semibold text-center">Complete Your Company Profile</h1>
       <p class="text-muted-foreground">This information will be used when publishing jobs</p>
     </div>
     <form @submit.prevent="submitForm" class="space-y-4">
-      <div class="grid grid-cols-2 gap-4">
+      <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
         <div class="flex flex-col space-y-1.5">
           <label for="companySize" class="block text-sm font-medium">Company Size</label>
           <SelectInput id="companySize" :options="companySize" v-model="form.companySize" />
@@ -56,7 +56,7 @@ function submitForm() {}
           <TextInput type="url" id="avatar" v-model="form.avatar" />
         </div>
       </div>
-      <div class="flex flex-col space-y-4">
+      <div class="flex flex-col gap-4">
         <div class="flex flex-col space-y-1.5">
           <label class="block text-sm font-medium">Address</label>
           <TextInput
@@ -67,7 +67,7 @@ function submitForm() {}
             required
           />
         </div>
-        <div class="grid gap-4 grid-cols-2">
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
           <div class="flex flex-col space-y-1.5">
             <label class="block text-sm font-medium">City</label>
             <TextInput

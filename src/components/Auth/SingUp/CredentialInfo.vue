@@ -11,9 +11,7 @@ function submitForm() {}
 </script>
 
 <template>
-  <div
-    class="bg-card text-card-foreground max-w-sm w-full p-5 border rounded-lg shadow-sm space-y-8"
-  >
+  <div class="max-w-sm w-full p-6 border rounded-lg shadow-sm space-y-8">
     <div class="space-y-3 text-center">
       <h1 class="text-2xl font-semibold text-center">Create an Account</h1>
       <p class="text-muted-foreground">Start by providing your login details</p>

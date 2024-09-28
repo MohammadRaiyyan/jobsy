@@ -5,7 +5,10 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: '2rem',
+      padding: {
+        md: '2rem',
+        DEFAULT: '1rem'
+      },
       screens: {
         '2xl': '1400px'
       }
@@ -21,6 +24,8 @@ export default {
           DEFAULT: 'hsl(var(--primary))', // Main primary color
           foreground: 'hsl(var(--primary-foreground))' // Text color on primary elements
         },
+        'primary-light': 'hsl(var(--primary-light))',
+        'primary-dark': 'hsl(var(--primary-dark))',
         accent: {
           DEFAULT: 'hsl(var(--accent))', // Accent color
           foreground: 'hsl(var(--accent-foreground))' // Text color on accent elements
@@ -42,7 +47,7 @@ export default {
           foreground: 'hsl(var(--popover-foreground))' // Text color for popovers
         },
         card: {
-          DEFAULT: 'hsl(var(--card))', // Card background color
+          DEFAULT: 'hsl(var(--card) / 0.3)', // Card background color
           foreground: 'hsl(var(--card-foreground))' // Card text color
         }
       },

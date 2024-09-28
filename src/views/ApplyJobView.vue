@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import CustomButton from '@/components/ui/CustomButton.vue'
+import InputLabel from '@/components/ui/InputLabel.vue'
 import TextInput from '@/components/ui/TextInput.vue'
+import { IconArrowLeft, IconArrowRight } from '@tabler/icons-vue'
 import { reactive, ref } from 'vue'
 
 const form = reactive({
@@ -36,9 +38,11 @@ const jobLocationOptions = [
   { label: 'Hybrid', value: 'hybrid' },
   { label: 'On Site', value: 'onsite' }
 ]
+
 function handleFileUpload(event, field) {
   form[field] = event.target.files[0]
 }
+
 function submitForm() {
   // Handle form submission logic here (validation, API call, etc.)
   console.log('Form Submitted', form)
@@ -47,16 +51,17 @@ function submitForm() {
 function handlePrevious() {
   step.value = step.value - 1
 }
+
 function handleNext() {
   step.value = step.value + 1
 }
 </script>
 
 <template>
-  <section class="container mx-auto h-full flex items-center justify-center">
+  <section class="h-full flex items-center justify-center">
     <form
       @submit.prevent="submitForm"
-      class="space-y-5 max-w-2xl w-full border rounded-lg p-6 shadow-sm bg-card text-card-foreground"
+      class="space-y-5 max-w-2xl w-full rounded-xl p-6 bg-card border text-card-foreground min-h-[432px] max-h-max transition-all duration-500 ease-in-out"
     >
       <div class="text-left space-y-1.5">
         <h1 class="font-medium text-lg">Job Application</h1>
@@ -67,23 +72,23 @@ function handleNext() {
 
       <!-- Personal Information -->
       <section v-if="step === 0" class="space-y-4">
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
           <div class="space-y-1.5">
-            <label for="firstName">First Name</label>
+            <InputLabel for="firstName" label="First Name" />
             <TextInput v-model="form.firstName" id="firstName" type="text" required />
           </div>
           <div class="space-y-1.5">
-            <label for="lastName">Last Name</label>
+            <InputLabel for="lastName" label="Last Name" />
             <TextInput v-model="form.lastName" id="lastName" type="text" required />
           </div>
         </div>
 
         <div class="space-y-1.5">
-          <label for="email">Email Address</label>
+          <InputLabel for="email" label="Email Address" />
           <TextInput v-model="form.email" id="email" type="email" required />
         </div>
         <div class="space-y-1.5">
-          <label for="phone">Phone Number</label>
+          <InputLabel for="phone" label="Phone Number" />
           <TextInput v-model="form.phone" id="phone" type="tel" required />
         </div>
       </section>
@@ -91,16 +96,17 @@ function handleNext() {
       <!-- Job Details -->
       <section v-if="step === 1" class="space-y-4">
         <div class="space-y-1.5">
-          <label for="linkedin">LinkedIn Profile</label>
+          <InputLabel for="linkedin" label="LinkedIn Profile" />
           <TextInput v-model="form.linkedin" id="linkedin" type="url" />
         </div>
 
         <div class="space-y-1.5">
-          <label for="portfolio">Portfolio Website</label>
+          <InputLabel for="portfolio" label="Portfolio Website" />
           <TextInput v-model="form.portfolio" id="portfolio" type="url" />
         </div>
+
         <div class="space-y-1.5">
-          <label for="position">Position Applying For</label>
+          <InputLabel for="position" label="Position Applying For" />
           <TextInput v-model="form.position" id="position" type="text" required />
         </div>
       </section>
@@ -108,31 +114,33 @@ function handleNext() {
       <!-- Resume and Cover Letter -->
       <section v-if="step === 2" class="space-y-4">
         <div class="space-y-1.5">
-          <label for="experience">Years of Experience</label>
+          <InputLabel for="experience" label="Years of Experience" />
           <TextInput v-model="form.experience" id="experience" type="number" min="0" required />
         </div>
 
         <div class="space-y-1.5">
-          <label for="jobTitle">Most Recent Job Title</label>
+          <InputLabel for="jobTitle" label="Most Recent Job Title" />
           <TextInput v-model="form.jobTitle" id="jobTitle" type="text" required />
         </div>
 
         <div class="space-y-1.5">
-          <label for="employer">Most Recent Employer</label>
+          <InputLabel for="employer" label="Most Recent Employer" />
           <TextInput v-model="form.employer" id="employer" type="text" required />
         </div>
+
         <div class="grid grid-cols-2 gap-4">
           <div class="space-y-1.5">
-            <label for="salary">Desired Salary</label>
+            <InputLabel for="salary" label="Desired Salary" />
             <TextInput v-model="form.salary" id="salary" type="number" min="0" required />
           </div>
           <div class="space-y-1.5">
-            <label for="startDate">Available Start Date</label>
+            <InputLabel for="startDate" label="Available Start Date" />
             <TextInput v-model="form.startDate" id="startDate" type="date" required />
           </div>
         </div>
+
         <div class="space-y-1.5">
-          <label for="resume">Upload Resume</label>
+          <InputLabel for="resume" label="Upload Resume" />
           <TextInput
             @change="handleFileUpload($event, 'resume')"
             id="resume"
@@ -143,7 +151,7 @@ function handleNext() {
         </div>
 
         <div class="space-y-1.5 flex flex-col">
-          <label for="personalStatement">Personal Statement / Motivation</label>
+          <InputLabel for="personalStatement" label="Personal Statement / Motivation" />
           <textarea
             class="border rounded"
             v-model="form.personalStatement"
@@ -152,12 +160,14 @@ function handleNext() {
         </div>
       </section>
 
-      <div class="flex items-center justify-between">
+      <div class="flex items-center justify-between gap-4">
         <!-- Submit Button -->
-        <CustomButton v-if="step >= 1" type="button" variant="secondary" @click="handlePrevious"
-          >Previous</CustomButton
+        <CustomButton v-if="step >= 1" type="button" variant="secondary" @click="handlePrevious">
+          <IconArrowLeft size="16" />Previous</CustomButton
         >
-        <CustomButton v-if="step < 2" type="button" @click="handleNext">Next</CustomButton>
+        <CustomButton v-if="step < 2" type="button" @click="handleNext"
+          >Next <IconArrowRight size="16" />
+        </CustomButton>
         <CustomButton v-if="step === 2" type="submit">Submit Application</CustomButton>
       </div>
     </form>

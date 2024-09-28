@@ -5,6 +5,7 @@ type InputProps = {
   size?: 'large' | 'medium' | 'small'
   iconPosition?: 'left' | 'right'
   icon?: Component
+  block?: boolean
 }
 
 const props = defineProps<InputProps>()
@@ -25,7 +26,10 @@ const iconSize = {
 
 <template>
   <div
-    class="relative border box-border border-input bg-background text-secondary-foreground rounded overflow-hidden focus-within:outline-none focus-within:ring-2 transition-all focus-within:ring-primary"
+    :class="[
+      'relative border box-border border-input bg-background text-secondary-foreground rounded-lg overflow-hidden focus-within:outline-none focus-within:ring-2 transition-all focus-within:ring-primary',
+      props.block ? 'w-full' : 'w-auto'
+    ]"
   >
     <span
       v-if="icon && iconPosition === 'left'"
@@ -36,7 +40,7 @@ const iconSize = {
 
     <input
       :class="[
-        '  min-w-60  w-full font-normal bg-background placeholder:text-sm placeholder:font-normal placeholder:text-muted-foreground/60  outline-none ',
+        'min-w-60  w-full font-normal bg-background placeholder:text-sm placeholder:font-normal placeholder:text-muted-foreground/60  outline-none ',
         sizeClass[size],
         icon && iconPosition === 'left' ? 'pl-10' : '',
         icon && iconPosition === 'right' ? 'pr-10' : ''

@@ -3,7 +3,7 @@ import JobListings from '@/components/JobListings/JobListings.vue'
 </script>
 
 <template>
-  <section class="container mx-auto space-y-8">
+  <section class="space-y-8">
     <div class="space-y-1">
       <h2 class="text-lg font-medium">My Postings</h2>
       <p class="text-secondary-foreground text-sm">

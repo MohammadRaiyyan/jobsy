@@ -4,15 +4,15 @@ import CompanyInfo from '@/components/Auth/SingUp/CompanyInfo.vue'
 </script>
 
 <template>
-  <div class="container mx-auto h-full">
-    <div class="grid grid-cols-2 border rounded h-full overflow-hidden">
-      <div class="bg-primary dark:bg-primary/10 flex items-center justify-center p-5">
+  <section class="bg-card text-card-foreground border rounded-xl h-full">
+    <div class="grid lg:grid-cols-2 grid-cols-1 h-full overflow-hidden">
+      <div class="bg-primary lg:flex hidden dark:bg-primary-light items-center justify-center p-5">
         <img :src="sideIllustration" alt="" srcset="" />
       </div>
-      <div class="w-full p-5 flex items-center justify-center">
+      <div class="w-full flex items-center justify-center">
         <CompanyInfo />
         <!-- <CredentialInfo /> -->
       </div>
     </div>
-  </div>
+  </section>
 </template>

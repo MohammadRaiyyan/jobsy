@@ -18,7 +18,7 @@ const size = props.size || 'medium'
 const variant = props.variant || 'primary'
 
 const variantClasses = {
-  primary: 'bg-primary text-primary-foreground  border-primary  hover:bg-primary/90',
+  primary: 'bg-primary text-primary-foreground  border-primary  hover:bg-primary-dark',
   secondary: 'bg-background text-background-foreground  hover:bg-secondary/80',
   tertiary: 'bg-secondary text-secondary-foreground border-secondary  hover:bg-secondary/80',
   success: 'bg-accent text-accent-foreground border  hover:bg-accent/80',
@@ -39,10 +39,9 @@ const sizeClasses = {
   <button
     v-bind="$attrs"
     :class="[
-      'font-medium box-border flex items-center justify-center gap-2 rounded border  transition-all',
+      'font-medium box-border flex items-center justify-center w-full gap-2 rounded-lg border  transition-all',
       variantClasses[variant],
-      sizeClasses[size],
-      `${block ? 'w-full' : 'w-max'}`
+      sizeClasses[size]
     ]"
   >
     <slot></slot>

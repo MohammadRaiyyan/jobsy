@@ -22,7 +22,7 @@ const props = defineProps<Job>()
 </script>
 
 <template>
-  <div class="bg-card shadow-sm border rounded-lg p-6 max-w-max text-left">
+  <div class="bg-card border rounded-xl md:p-6 p-5 max-w-max text-left">
     <!-- Company Logo -->
     <div class="flex items-center mb-4">
       <img
@@ -32,7 +32,7 @@ const props = defineProps<Job>()
       />
       <div>
         <!-- Job Title -->
-        <h3 class="text-lg font-medium">
+        <h3 class="font-medium">
           {{ props.job.title }}
         </h3>
         <!-- Company Name -->
@@ -40,7 +40,9 @@ const props = defineProps<Job>()
       </div>
     </div>
     <!-- Location and Job Type -->
-    <div class="flex justify-between text-muted-foreground text-sm mb-4 font-normal">
+    <div
+      class="flex justify-between flex-wrap gap-2 text-muted-foreground text-sm mb-4 font-normal"
+    >
       <span class="flex gap-1 items-center">
         <span><IconLocation size="16" /></span>{{ props.job.location }}</span
       >
@@ -50,9 +52,6 @@ const props = defineProps<Job>()
         </span>
         {{ props.job.type }}</span
       >
-    </div>
-    <!-- Posted Date and Salary -->
-    <div class="flex justify-between text-muted-foreground text-sm mb-4">
       <span class="flex gap-1 items-center">
         <span><IconCalendar size="16" /></span>
         {{ props.job.postedAt }}</span
@@ -64,19 +63,20 @@ const props = defineProps<Job>()
         {{ props.job.salary }}</span
       >
     </div>
+
     <!-- Description/Details -->
     <p class="mb-4 text-secondary-foreground">
       {{ props.job.description }}
     </p>
     <!-- Buttons -->
     <!-- Buttons -->
-    <div class="flex gap-3 justify-between">
+    <div class="grid grid-cols-1 gap-3 md:grid-cols-2 justify-between">
       <!-- Apply Button (Optional) -->
-      <RouterLink to="/apply" class="flex-1">
+      <RouterLink to="/apply" class="w-full">
         <CustomButton :block="true"> Apply Now </CustomButton>
       </RouterLink>
       <!-- View Details Button -->
-      <RouterLink :to="`/job/${props.job.id}`" class="flex-1">
+      <RouterLink :to="`/job/${props.job.id}`" class="w-full">
         <CustomButton variant="tertiary" :block="true"> View Details </CustomButton>
       </RouterLink>
     </div>

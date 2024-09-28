@@ -21,11 +21,11 @@ const sizeClass = {
 
 <template>
   <div
-    class="relative rounded bg-background text-secondary-foreground border box-border border-input"
+    class="relative rounded-lg bg-background text-secondary-foreground border box-border border-input"
   >
     <select
       :class="[
-        'relative  appearance-none bg-background   font-normal placeholder:text-muted-foreground outline-none focus:outline-none focus:ring-2 transition-all focus:ring-primary w-full',
+        'relative  appearance-none bg-background rounded-lg   font-normal placeholder:text-muted-foreground outline-none focus:outline-none focus:ring-2 transition-all focus:ring-primary w-full',
         sizeClass[size]
       ]"
       v-bind="$attrs"

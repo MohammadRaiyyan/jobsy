@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import heroBg from '@/assets/people-working.jpg'
 import JobListings from '@/components/JobListings/JobListings.vue'
 import CustomButton from '@/components/ui/CustomButton.vue'
+import SectionTitle from '@/components/ui/SectionTitle.vue'
 import SelectInput from '@/components/ui/SelectInput.vue'
 import TextInput from '@/components/ui/TextInput.vue'
 import { IconBriefcase, IconCash, IconFilter, IconLocation, IconSearch } from '@tabler/icons-vue'
@@ -35,26 +35,26 @@ const jobSortyByOptions = [
 </script>
 
 <template>
-  <div class="container mx-auto px-4">
+  <section>
     <!-- Search Section -->
-    <section class="relative bg-primary/40 text-white py-16 rounded overflow-hidden">
-      <img
-        :src="heroBg"
-        alt="Hero Banner"
-        class="absolute inset-0 w-full h-full object-cover opacity-70"
-      />
-      <div class="relative container mx-auto px-4 py-8 text-center">
-        <h1 class="text-4xl font-bold mb-4">Find Your Dream Job</h1>
-        <p class="text-xl mb-8">
+    <section
+      class="relative bg-card border text-white lg:py-16 rounded-xl overflow-hidden md:h-[300px] h-max"
+    >
+      <div
+        class="container mx-auto md:px-6 px-5 py-8 h-full w-full text-center flex flex-col items-center justify-center"
+      >
+        <h1 class="lg:text-4xl sm:text-2xl text-xl font-bold mb-4">Find Your Dream Job</h1>
+        <p class="mb-8">
           Explore thousands of job opportunities and start your career journey today!
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+        <div class="flex flex-col sm:flex-row gap-4 items-center justify-center w-full md:w-max">
           <TextInput
             :icon="IconBriefcase"
             iconPosition="left"
             type="text"
             placeholder="Job Title"
             size="large"
+            block
           />
           <TextInput
             :icon="IconLocation"
@@ -62,9 +62,10 @@ const jobSortyByOptions = [
             type="text"
             placeholder="Location"
             size="large"
+            block
           />
-          <div>
-            <CustomButton size="large"
+          <div class="md:w-max w-full">
+            <CustomButton size="large" block
               ><span><IconSearch size="20" /></span>
             </CustomButton>
           </div>
@@ -72,19 +73,21 @@ const jobSortyByOptions = [
       </div>
     </section>
     <!-- Filters and Sorting Section -->
-    <div class="mt-8 flex justify-between items-center">
+    <div class="mt-8 flex justify-between flex-wrap items-center bg-card border rounded-lg p-5">
       <!-- Filters -->
-      <div class="flex space-x-4">
+      <div class="flex flex-wrap gap-2">
         <SelectInput :options="jobTypeOptions" />
-        <div class="flex space-x-2">
+        <div class="flex flex-wrap gap-2">
           <TextInput :icon="IconCash" iconPosition="left" type="number" placeholder="Min Salary" />
           <TextInput :icon="IconCash" iconPosition="left" type="number" placeholder="Max Salary" />
         </div>
 
-        <CustomButton variant="tertiary">
-          <IconFilter size="16" />
-          Apply Filters
-        </CustomButton>
+        <div>
+          <CustomButton variant="tertiary">
+            <IconFilter size="16" />
+            Apply Filters
+          </CustomButton>
+        </div>
       </div>
 
       <!-- Sorting -->
@@ -94,13 +97,13 @@ const jobSortyByOptions = [
     </div>
     <!-- Recent Jobs Section -->
     <section class="mt-8">
-      <h2 class="text-lg font-medium mb-5">Recent Jobs</h2>
+      <SectionTitle title="Recent Jobs" />
       <JobListings />
     </section>
     <!-- All Jobs Section -->
     <section class="mt-8">
-      <h2 class="text-lg font-medium mb-5">All Jobs</h2>
+      <SectionTitle title="All Jobs" />
       <JobListings />
     </section>
-  </div>
+  </section>
 </template>

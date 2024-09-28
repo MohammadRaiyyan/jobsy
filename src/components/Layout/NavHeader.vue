@@ -1,55 +1,33 @@
 <script setup lang="ts">
 import {
-  IconBriefcase,
-  IconCategoryPlus,
-  IconHome,
   IconLayout2,
   IconLogin2,
   IconLogout2,
   IconSettings,
   IconUserCircle
 } from '@tabler/icons-vue'
+import { RouterLink } from 'vue-router'
+import logo from '../../assets/logo.png'
 import PopOver from '../ui/PopOver.vue'
+import NavLinks from './NavLinks.vue'
 </script>
 
 <template>
   <header
-    class="flex items-center justify-center h-12 bg-secondary text-secondary-foreground border-b"
+    class="flex items-center justify-center h-14 bg-card absolute z-10 top-0 w-full backdrop-blur-md text-card-foreground border-b"
   >
     <nav class="flex items-center justify-between gap-4 container mx-auto w-full">
-      <div><h2 class="font-bold text-xl">Jobsy</h2></div>
-      <div>
-        <ul class="flex items-center gap-5">
-          <li>
-            <RouterLink
-              class="hover:bg-primary/10 hover:text-primary rounded p-1 px-2 flex items-center gap-2"
-              active-class="text-primary font-medium pointer-events-none "
-              to="/"
-            >
-              <IconHome size="18" />
-              Home</RouterLink
-            >
-          </li>
-          <li>
-            <RouterLink
-              active-class="text-primary font-medium pointer-events-none"
-              class="hover:bg-primary/10 hover:text-primary rounded p-1 px-2 flex items-center gap-2"
-              to="/jobs"
-            >
-              <IconBriefcase size="18" />
-              Jobs
-            </RouterLink>
-          </li>
-          <li>
-            <RouterLink
-              active-class="text-primary font-medium pointer-events-none"
-              class="hover:bg-primary/10 hover:text-primary rounded p-1 px-2 flex items-center gap-2"
-              to="/add-job"
-            >
-              <IconCategoryPlus size="18" />
-              Post Job</RouterLink
-            >
-          </li>
+      <div class="flex items-center py-2">
+        <RouterLink to="/">
+          <img :src="logo" alt="Jobsy" class="h-full w-32 bg-cover object-cover" />
+        </RouterLink>
+      </div>
+      <div class="flex items-center gap-4 flex-1 justify-end">
+        <div class="md:flex hidden md:flex-1 justify-end">
+          <NavLinks />
+        </div>
+
+        <ul class="flex items-center gap-4">
           <li>
             <RouterLink
               active-class="text-primary font-medium pointer-events-none"
@@ -57,17 +35,17 @@ import PopOver from '../ui/PopOver.vue'
               to="/login"
             >
               <IconLogin2 size="18" />
-              Login</RouterLink
-            >
+              Login
+            </RouterLink>
+            <!-- Closing tag corrected here -->
           </li>
-          <li>
-            <!-- <RouterLink to="/my-postings"> -->
+          <li class="flex items-center">
             <PopOver side="bottom">
-              <template v-slot:trigger>
+              <template #trigger>
                 <IconUserCircle size="24" />
               </template>
               <div class="divide-y w-[250px]">
-                <div class="flex items-center gap-2 px-3 py-2 bg-secondary">
+                <div class="flex items-center gap-2 font-semibold px-3 py-2 bg-background">
                   <IconUserCircle size="24" />
                   <h4>Wobot.ai</h4>
                 </div>
@@ -75,7 +53,7 @@ import PopOver from '../ui/PopOver.vue'
                   <li>
                     <RouterLink
                       to="/my-postings"
-                      class="flex gap-2 items-center px-3 py-2 rounded-sm text-sm hover:bg-secondary"
+                      class="flex gap-2 items-center px-3 py-2 rounded-lg text-sm hover:bg-secondary"
                       active-class="bg-secondary"
                     >
                       <IconLayout2 size="18" class="text-muted-foreground" />
@@ -86,11 +64,12 @@ import PopOver from '../ui/PopOver.vue'
                     <RouterLink
                       to="/account"
                       active-class="bg-secondary"
-                      class="flex gap-2 items-center px-3 py-2 rounded-sm text-sm hover:bg-secondary"
+                      class="flex gap-2 items-center px-3 py-2 rounded-lg text-sm hover:bg-secondary"
                     >
                       <IconSettings size="18" class="text-muted-foreground" />
-                      Account</RouterLink
-                    >
+                      Account
+                    </RouterLink>
+                    <!-- Closing tag corrected here -->
                   </li>
                 </ul>
                 <ul class="px-2 py-1.5">
@@ -98,17 +77,16 @@ import PopOver from '../ui/PopOver.vue'
                     <RouterLink
                       to="/logout"
                       active-class="bg-secondary"
-                      class="flex gap-2 items-center px-3 py-2 rounded-sm text-sm text-destructive hover:bg-secondary"
+                      class="flex gap-2 items-center px-3 py-2 rounded-lg font-medium text-sm text-destructive hover:bg-secondary"
                     >
                       <IconLogout2 size="18" />
-
-                      Logout</RouterLink
-                    >
+                      Logout
+                    </RouterLink>
+                    <!-- Closing tag corrected here -->
                   </li>
                 </ul>
               </div>
             </PopOver>
-            <!-- </RouterLink> -->
           </li>
         </ul>
       </div>

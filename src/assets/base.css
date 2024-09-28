@@ -7,13 +7,15 @@
 @layer base {
   :root {
     /* Light Mode Colors */
-    --background: 0 0% 100%; /* Main background color (white) */
+    --background: 225, 28.57%, 97.25%; /* Main background color (white) */
     --foreground: 240 10% 3.9%; /* Main text color (dark gray) */
     --card: 0 0% 100%; /* Card background color */
     --card-foreground: 240 10% 3.9%; /* Text color in cards */
     --popover: 0 0% 100%; /* Popover background */
     --popover-foreground: 240 10% 3.9%; /* Popover text color */
-    --primary: 220 72% 50%; /* Updated primary color */
+    --primary: 244.52, 57.94%, 50.59%; /* Updated primary color */
+    --primary-light: 244.52, 57.94%, 50.59%, 0.078;
+    --primary-dark: 243.65, 54.5%, 41.37%;
     --primary-foreground: 0 0% 100%; /* Text on primary buttons */
     --accent: 24 100% 50%; /* Accent color (orange) */
     --accent-foreground: 0 0% 100%; /* Text on accent elements */
@@ -25,7 +27,7 @@
     --destructive-foreground: 0 0% 98%; /* Text for destructive elements */
     --border: 240 5.9% 90%; /* Border color */
     --input: 240 5.9% 90%; /* Input field background */
-    --ring: 220 72% 50%; /* Updated focus ring color to match primary */
+    --ring: 244.52, 57.94%, 50.59%; /* Updated focus ring color to match primary */
     --radius: 0.5rem; /* Default border radius */
   }
 
@@ -37,7 +39,9 @@
     --card-foreground: 0 0% 98%; /* Light text in cards */
     --popover: 240 10% 15%; /* Dark popover background */
     --popover-foreground: 0 0% 98%; /* Light text in popovers */
-    --primary: 220 72% 50%; /* Updated primary color for dark mode */
+    --primary: 244.52, 57.94%, 50.59%; /* Updated primary color for dark mode */
+    --primary-light: 244.52, 57.94%, 50.59%, 0.078;
+    --primary-dark: 243.65, 54.5%, 41.37%;
     --primary-foreground: 0 0% 100%; /* Light text on primary elements */
     --accent: 24 100% 50%; /* Accent color (orange) remains the same */
     --accent-foreground: 0 0% 100%; /* Text on accent elements */
@@ -49,7 +53,7 @@
     --destructive-foreground: 0 85.7% 97.3%; /* Destructive text */
     --border: 240 3.7% 20%; /* Dark mode border */
     --input: 240 3.7% 20%; /* Dark mode input background */
-    --ring: 220 72% 50%; /* Updated focus ring color to match primary */
+    --ring: 244.52, 57.94%, 50.59%; /* Updated focus ring color to match primary */
     --radius: 0.5rem; /* Same border radius */
   }
 
@@ -58,9 +62,16 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-no-repeat bg-cover h-screen;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-style: normal;
+    background-image: url('./p-3.svg');
+  }
+  main {
+    @apply bg-black/90 backdrop-blur-xl inset-0 fixed text-foreground;
+  }
+  textarea {
+    @apply bg-background rounded-xl;
   }
 }

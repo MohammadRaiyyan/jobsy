@@ -6,10 +6,10 @@ import TextInput from '@/components/ui/TextInput.vue'
 <template>
   <section class="flex items-center justify-center h-full">
     <div
-      class="bg-card text-card-foreground border rounded-lg shadow-sm max-w-md w-full mx-auto p-6 py-8 space-y-10"
+      class="bg-card text-card-foreground border rounded-xl max-w-md w-full mx-auto p-6 py-8 space-y-10"
     >
       <div class="text-center space-y-4">
-        <h2 class="font-medium text-2xl">Login</h2>
+        <h2 class="font-semibold text-2xl">Login</h2>
         <p class="text-muted-foreground">
           Log in to publish job postings and find qualified candidates quickly
         </p>

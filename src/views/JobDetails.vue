@@ -1,15 +1,14 @@
 <script setup lang="ts">
 import CustomButton from '@/components/ui/CustomButton.vue'
+import { IconSend } from '@tabler/icons-vue'
 </script>
 
 <template>
-  <section class="container mx-auto">
+  <section>
     <!-- Page Title -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
       <!-- Job Details Column -->
-      <div
-        class="lg:col-span-2 bg-card text-card-foreground p-6 rounded-lg shadow-sm border space-y-5"
-      >
+      <div class="lg:col-span-2 bg-card text-card-foreground p-6 rounded-xl space-y-5">
         <div>
           <h2 class="text-xl font-medium">Frontend Developer</h2>
         </div>
@@ -41,9 +40,7 @@ import CustomButton from '@/components/ui/CustomButton.vue'
       </div>
 
       <!-- Apply and Company Details Column -->
-      <div
-        class="bg-card text-card-foreground p-6 rounded-lg shadow-sm border space-y-5 flex flex-col h-max"
-      >
+      <div class="bg-card text-card-foreground p-6 rounded-xl space-y-5 flex flex-col h-max">
         <div class="flex-1">
           <h2 class="text-lg font-medium mb-4">Company Details</h2>
           <p class="text-secondary-foreground mb-2">
@@ -68,7 +65,10 @@ import CustomButton from '@/components/ui/CustomButton.vue'
           </p>
         </div>
         <div>
-          <CustomButton block> Apply for this Job </CustomButton>
+          <CustomButton block>
+            <IconSend size="16" />
+            Apply for this Job
+          </CustomButton>
         </div>
       </div>
     </div>
