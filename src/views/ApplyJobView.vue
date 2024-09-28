@@ -2,10 +2,11 @@
 import CustomButton from '@/components/ui/CustomButton.vue'
 import InputLabel from '@/components/ui/InputLabel.vue'
 import TextInput from '@/components/ui/TextInput.vue'
+import type { FormType } from '@/types/ApplyJobType'
 import { IconArrowLeft, IconArrowRight } from '@tabler/icons-vue'
 import { reactive, ref } from 'vue'
 
-const form = reactive({
+const form = reactive<FormType>({
   firstName: '',
   lastName: '',
   email: '',
@@ -39,8 +40,13 @@ const jobLocationOptions = [
   { label: 'On Site', value: 'onsite' }
 ]
 
-function handleFileUpload(event, field) {
-  form[field] = event.target.files[0]
+function handleFileUpload(event: Event, field: keyof FormType): void {
+  const target = event.target as HTMLInputElement
+  if (target.files && target.files.length > 0) {
+    if (field === 'resume' || field === 'coverLetter') {
+      form[field] = target.files[0]
+    }
+  }
 }
 
 function submitForm() {
